@@ -55,6 +55,10 @@ input[type="submit"] {
   margin: auto;
 }
 
+.location {
+  width: fit-content;
+}
+
 @media only screen and (max-width: 768px) {
   .route {
     flex-direction: column;

@@ -9,7 +9,7 @@ function App() {
       <Nav />
       <h1 style={{ textAlign: "center" }}>Daily Worksheet</h1>
       <Form />
-      {/* <Icons /> */}
+      <Icons />
     </div>
   );
 }
@@ -168,13 +168,13 @@ function Button({ type, value }) {
   );
 }
 
-// function Icons() {
-//   return (
-//     <div className="icons">
-//       <Verizon />
-//       <Wpi />
-//     </div>
-//   );
-// }
+function Icons() {
+  return (
+    <div className="icons">
+      <img src={Verizon} alt="Verizon" />
+      <img src={Wpi} alt="WPI" />
+    </div>
+  );
+}
 
 export default App;
