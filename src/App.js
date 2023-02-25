@@ -17,7 +17,7 @@ function App() {
 function Nav() {
   return (
     <nav>
-      <h1>Mungovan-Land</h1>
+      <h1>Mungovan.land</h1>
     </nav>
   );
 }
