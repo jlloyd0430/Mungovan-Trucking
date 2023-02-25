@@ -54,3 +54,15 @@ input[type="submit"] {
   box-shadow: 1px 1px 5px black;
   margin: auto;
 }
+
+@media only screen and (max-width: 768px) {
+  .route {
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* margin-bottom: 10px; */
+  }
+
+  .location {
+    
+  }
+}

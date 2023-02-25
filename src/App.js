@@ -85,6 +85,7 @@ function Form() {
             placeholder="Enter From Location"
             onChange={handleFromLocationChange}
           />
+          To
           <Input
             className="location"
             name="To"
