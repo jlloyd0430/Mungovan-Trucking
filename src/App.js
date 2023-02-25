@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Verizon from "./images/verizon.png";
 import Wpi from "./images/wpi.png";
@@ -23,13 +23,87 @@ function Nav() {
 }
 
 function Form() {
+  const [jobType, setJobType] = useState("");
+  const [showRoutes, setShowRoutes] = useState(false);
+  const [fromLocation, setFromLocation] = useState("");
+  const [toLocation, setToLocation] = useState("");
+  const [objectType, setObjectType] = useState("");
+  const [numObjects, setNumObjects] = useState(0);
+
+  const handleJobTypeChange = (event) => {
+    const jobTypeValue = event.target.value;
+    setJobType(jobTypeValue);
+
+    if (jobTypeValue === "Delivery") {
+      setShowRoutes(true);
+    } else {
+      setShowRoutes(false);
+    }
+  };
+
+  const handleFromLocationChange = (event) => {
+    const fromLocationValue = event.target.value;
+    setFromLocation(fromLocationValue);
+  };
+
+  const handleToLocationChange = (event) => {
+    const toLocationValue = event.target.value;
+    setToLocation(toLocationValue);
+  };
+
+  const handleObjectTypeChange = (event) => {
+    const objectTypeValue = event.target.value;
+    setObjectType(objectTypeValue);
+  };
+
+  const handleNumObjectsChange = (event) => {
+    const numObjectsValue = event.target.value;
+    setNumObjects(numObjectsValue);
+  };
+
   return (
     <form action="https://formspree.io/f/mvonajop" method="post">
       <Input name="name" type="text" placeholder="Enter your Name..." />
       <Input name="email" type="email" placeholder="Enter your Email..." />
       <Select
         name="Job Type"
-        options={["Cleanout", "Delivery", "Pickup", "Internal-move"]}
+        options={[
+          "Cleanout",
+          "Delivery",
+          "Pickup",
+          "Internal-move",
+          "Disposition",
+        ]}
+        onChange={handleJobTypeChange}
+      />
+      {showRoutes && (
+        <div className="route">
+          <Input
+            className="location"
+            name="From"
+            type="text"
+            placeholder="Enter From Location"
+            onChange={handleFromLocationChange}
+          />
+          <Input
+            className="location"
+            name="To"
+            type="text"
+            placeholder="Enter To Location"
+            onChange={handleToLocationChange}
+          />
+        </div>
+      )}
+      <Select
+        name="Object Type"
+        options={["Gaylords", "Cones", "Tarps", "Masonite"]}
+        onChange={handleObjectTypeChange}
+      />
+      <Input
+        name="Number of Objects"
+        type="number"
+        placeholder="Enter Number of Objects"
+        onChange={handleNumObjectsChange}
       />
       <TextArea name="message" rows={10} placeholder="Enter Message" />
       <Button type="submit" value="Send" />
@@ -48,9 +122,14 @@ function Input({ name, type, placeholder }) {
   );
 }
 
-function Select({ name, options }) {
+function Select({ name, options, onChange }) {
   return (
-    <select name={name} style={{ padding: "0.5rem", borderRadius: "16px" }}>
+    <select
+      name={name}
+      style={{ padding: "0.5rem", borderRadius: "16px" }}
+      onChange={onChange}
+    >
+      <option value="">Choose an option</option>
       {options.map((option) => (
         <option key={option}>{option}</option>
       ))}
@@ -88,13 +167,13 @@ function Button({ type, value }) {
   );
 }
 
-function Icons() {
-  return (
-    <div className="icons">
-      <Verizon />
-      <Wpi />
-    </div>
-  );
-}
+// function Icons() {
+//   return (
+//     <div className="icons">
+//       <Verizon />
+//       <Wpi />
+//     </div>
+//   );
+// }
 
 export default App;
