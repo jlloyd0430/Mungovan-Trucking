@@ -146,7 +146,7 @@ function Select({ name, options, onChange }) {
       style={{ padding: "0.5rem", borderRadius: "16px" }}
       onChange={onChange}
     >
-      <option value="">Choose an option</option>
+      <option value="">Choose a job type</option>
       {options.map((option) => (
         <option key={option}>{option}</option>
       ))}
