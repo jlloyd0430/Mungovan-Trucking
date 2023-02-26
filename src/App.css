@@ -5,6 +5,14 @@ body {
   margin: auto;
 }
 
+.col-md-6 {
+  font-family: 'Lobster', cursive;
+}
+
+header {
+  font-family: 'Lobster', cursive;
+}
+
 nav {
   text-align: right;
   /* border-bottom: yellow 1px solid; */
