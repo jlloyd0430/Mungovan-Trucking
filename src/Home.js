@@ -68,7 +68,7 @@ function Home() {
       <div className="name-section">
         <Input name="name" type="text" placeholder="Enter your Name..." />
         <div style={{ marginTop: "1rem" }}>
-          <Input name="date" type="date" onChange={handleDateChange} />
+          <Input name="date" type="date" placeholder="Date" onChange={handleDateChange} />
         </div>
       </div>
       <Input name="email" type="email" placeholder="Enter your Email..." />
