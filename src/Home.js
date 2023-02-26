@@ -139,7 +139,17 @@ function Home() {
           />
         </div>
       )}
-      <Button type="submit" value="Send" />
+       <div>
+        <label>
+          <input
+            type="checkbox"
+            checked={addJob}
+            onChange={handleAddJobChange}
+          />
+          Add job
+        </label>
+      </div>
+     <Button type="submit" value="Send" />
     </form>
   );
 }
