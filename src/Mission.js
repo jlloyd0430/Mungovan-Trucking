@@ -4,61 +4,71 @@ import "./AddressBook.css";
 const addresses = [
   {
     town: "Albany",
-    streetAddress: "7 Washington Sq, Albany, NY 12205",
+    streetAddress: "7 Washington Sq",
     state: "NY",
+    zip: "12205",
   },
   {
     town: "Binghamton",
-    streetAddress: "185 Franklin st, Boston, MA 13903",
+    streetAddress: "185 Franklin st",
     state: "MA",
+    zip: "13903",
   },
   {
     town: "Buffalo",
-    streetAddress: "64 Court St, Buffalo, NY 14202",
+    streetAddress: "64 Court St",
     state: "NY",
+    zip: "14202",
   },
   {
     town: "Harrisburg",
-    streetAddress: "2360 Vartan Way, Harrisburg, PA 17110",
+    streetAddress: "2360 Vartan Way",
     state: "PA",
+    zip: "17110",
   },
   {
     town: "Pittsburgh",
-    streetAddress: "611 William Penn Pl, Pittsburgh, PA 15219",
+    streetAddress: "611 William Penn Pl",
     state: "PA",
+    zip: "15219",
   },
   {
     town: "Philadelphia",
-    streetAddress: "1818 Market St, Philadelphia, PA 19103",
+    streetAddress: "1818 Market St",
     state: "PA",
+    zip: "19103",
   },
   {
     town: "Newark",
-    streetAddress: "540 Broad St, Newark, NJ 07102",
+    streetAddress: "540 Broad St",
     state: "NJ",
+    zip: "07102",
   },
   {
     town: "Jersey City",
-    streetAddress: "111 Town Square Pl, Jersey City, NJ 07310",
+    streetAddress: "111 Town Square Pl",
     state: "NJ",
+    zip: "07310",
   },
   {
     town: "Trenton",
-    streetAddress: "207 West State Street, Trenton, NJ 08608",
+    streetAddress: "207 West State Street",
     state: "NJ",
+    zip: "08608",
   },
 ];
 
 function Mission() {
   return (
     <div>
-      <h1>Verizon C.O Addresses</h1>
+      <h1>Verizon CO Buildings Addresses</h1>
       <table>
         <thead>
           <tr>
             <th>Town</th>
             <th>Street Address</th>
             <th>State</th>
+            <th>Zip</th>
           </tr>
         </thead>
         <tbody>
@@ -67,6 +77,7 @@ function Mission() {
               <td>{address.town}</td>
               <td>{address.streetAddress}</td>
               <td>{address.state}</td>
+              <td>{address.zip}</td>
             </tr>
           ))}
         </tbody>
