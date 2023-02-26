@@ -73,7 +73,7 @@ form {
 
 @media only screen and (max-width: 768px) {
   form {
-    width: 75% !important;
+    width: 90% !important;
     margin: auto !important;
     /* Add margin to the left and right sides of the form */
   }
