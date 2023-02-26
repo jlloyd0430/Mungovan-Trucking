@@ -1,114 +1,63 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Home() {
-  const [jobType, setJobType] = useState("");
-  const [showRoutes, setShowRoutes] = useState(false);
-  const [showOneLocation, setShowOneLocation] = useState(false);
-  const [location, setLocation] = useState("");
+  const [showToLocationInput, setShowToLocationInput] = useState(false);
   const [objectType, setObjectType] = useState("");
   const [numObjects, setNumObjects] = useState(0);
-  const [fromLocation, setFromLocation] = useState("");
-  const [toLocation, setToLocation] = useState("");
-  const [date, setDate] = useState("");
-
-  const handleJobTypeChange = (event) => {
-    const jobTypeValue = event.target.value;
-    setJobType(jobTypeValue);
-
-    if (jobTypeValue === "Delivery") {
-      setShowRoutes(true);
-      setShowOneLocation(false);
-    } else if (
-      jobTypeValue === "Cleanout" ||
-      jobTypeValue === "Pickup" ||
-      jobTypeValue === "Internal-move" ||
-      jobTypeValue === "Disposition"
-    ) {
-      setShowRoutes(false);
-      setShowOneLocation(true);
-    } else {
-      setShowRoutes(false);
-      setShowOneLocation(false);
-    }
-  };
-
-  const handleFromLocationChange = (event) => {
-    const fromLocationValue = event.target.value;
-    setFromLocation(fromLocationValue);
-  };
+  const [message, setMessage] = useState("");
+  const [image, setImage] = useState(null);
+  const [isSending, setIsSending] = useState(false);
 
   const handleToLocationChange = (event) => {
-    const toLocationValue = event.target.value;
-    setToLocation(toLocationValue);
-  };
-
-  const handleLocationChange = (event) => {
-    const locationValue = event.target.value;
-    setLocation(locationValue);
+    const value = event.target.value;
+    setShowToLocationInput(value === "Other");
   };
 
   const handleObjectTypeChange = (event) => {
-    const objectTypeValue = event.target.value;
-    setObjectType(objectTypeValue);
+    setObjectType(event.target.value);
   };
 
   const handleNumObjectsChange = (event) => {
-    const numObjectsValue = event.target.value;
-    setNumObjects(numObjectsValue);
+    setNumObjects(event.target.value);
   };
 
-  const handleDateChange = (event) => {
-    const dateValue = event.target.value;
-    setDate(dateValue);
+  const handleMessageChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const handleImageChange = (event) => {
+    setImage(event.target.files[0]);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // do something with form data (e.g. send it to a server)
+    console.log({
+      toLocation: showToLocationInput ? "Other" : "",
+      objectType,
+      numObjects,
+      message,
+      image,
+    });
+    setIsSending(true);
+    setTimeout(() => {
+      setIsSending(false);
+    }, 2000);
   };
 
   return (
-    <form action="https://formspree.io/f/mvonajop" method="post">
-      <Title className="Title" />
-      <div className="name-section">
-        <Input name="name" type="text" placeholder="Enter your Name..." />
-        <div style={{ marginTop: "1rem" }}>
-          <Input name="date" type="date" placeholder="Date" onChange={handleDateChange} />
-        </div>
-      </div>
-      <Input name="email" type="email" placeholder="Enter your Email..." />
+    <form onSubmit={handleSubmit}>
+      <Title />
       <Select
-        name="Job Type"
-        options={[
-          "Cleanout",
-          "Delivery",
-          "Pickup",
-          "Internal-move",
-          "Disposition",
-        ]}
-        onChange={handleJobTypeChange}
+        name="To Location"
+        options={["Location 1", "Location 2", "Location 3", "Other"]}
+        onChange={handleToLocationChange}
       />
-      {showRoutes && (
-        <div className="route">
-          <Input
-            className="location"
-            name="From"
-            type="text"
-            placeholder="Enter From Location"
-            onChange={handleFromLocationChange}
-          />
-          To
-          <Input
-            className="location"
-            name="To"
-            type="text"
-            placeholder="Enter To Location"
-            onChange={handleToLocationChange}
-          />
-        </div>
-      )}
-      {showOneLocation && (
+      {showToLocationInput && (
         <Input
-          className="location"
-          name="Location"
+          name="Other Location"
           type="text"
           placeholder="Enter To Location"
-          onChange={handleToLocationChange}
         />
       )}
       <Select
@@ -122,8 +71,24 @@ function Home() {
         placeholder="Enter Number of Objects"
         onChange={handleNumObjectsChange}
       />
-      <TextArea name="message" rows={10} placeholder="Enter Message" />
-      <Button type="submit" value="Send" />
+      <TextArea
+        name="message"
+        rows={10}
+        placeholder="Enter Message"
+        onChange={handleMessageChange}
+      />
+      <label htmlFor="image-upload"></label>
+      <input id="image-upload" type="file" onChange={handleImageChange} />
+      {image && (
+        <div>
+          <img
+            src={URL.createObjectURL(image)}
+            alt="Selected"
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
+        </div>
+      )}
+      <Button type="submit" value={isSending ? "Sending..." : "Send"} />
     </form>
   );
 }
@@ -146,7 +111,7 @@ function Select({ name, options, onChange }) {
       style={{ padding: "0.5rem", borderRadius: "16px" }}
       onChange={onChange}
     >
-      <option value="">Choose a job type</option>
+      <option value="">Choose an option</option>
       {options.map((option) => (
         <option key={option}>{option}</option>
       ))}
