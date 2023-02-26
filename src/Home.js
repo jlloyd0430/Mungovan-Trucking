@@ -182,7 +182,7 @@ function TextArea({ name, rows, placeholder }) {
 }
 
 function Title() {
-  return <h1>Daily Worksheets</h1>;
+  return <h1>Daily Worksheet</h1>;
 }
 
 function Button({ type, value }) {
