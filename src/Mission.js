@@ -52,7 +52,7 @@ const addresses = [
 function Mission() {
   return (
     <div>
-      <h1>Verizon CO Buildings Addresses</h1>
+      <h1>Verizon C.O Addresses</h1>
       <table>
         <thead>
           <tr>
