@@ -76,10 +76,13 @@ function Home() {
   return (
     <form action="https://formspree.io/f/mvonajop" method="post">
       <Title className="Title" />
-      <div className="name-section">
-        <Input name="name" type="text" placeholder="Enter your Name..." />
-        <div style={{ marginTop: "1rem" }}>
-          <Input name="date" type="date" onChange={handleDateChange} />
+      <div className="name-date-section">
+        {" "}
+        <div className="name-section">
+          <Input name="name" type="text" placeholder="Enter your Name..." />
+          <div style={{ marginTop: "1rem" }}>
+            <Input name="date" type="date" onChange={handleDateChange} />
+          </div>
         </div>
       </div>
       <Input name="email" type="email" placeholder="Enter your Email..." />
