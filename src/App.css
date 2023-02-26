@@ -1,6 +1,67 @@
 body {
-  background-color: green;
+  /* margin: 30px; */
+  /* color: white; */
+  background-color: green !important;
+  margin: auto;
+}
+
+nav {
+  text-align: right;
+  /* border-bottom: yellow 1px solid; */
+}
+
+h1 {
+  color: grey;
+}
+
+a {
+  display: inline-block;
+  color: white;
+}
+
+a:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+
+nav a {
+  padding: 10px 20px;
+}
+
+form,
+h1 {
+  margin-top: 15px;
+  color: green;
+}
+
+h2 {
   color: #fff;
+}
+
+form {
+  margin: auto;
+  /* background-color: #fff; */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 60%;
+  margin: auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 16px;
+}
+
+.name-date-section {
+  display: flex;
+  gap: 2rem;
+}
+
+.name-section {
+  flex: 1;
+}
+
+.date-section {
+  flex: 1;
 }
 
 .icons {
@@ -10,68 +71,10 @@ body {
   width: 75%;
 }
 
-nav {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 45px;
-  padding: 10px;
-  color: yellow;
-  border-bottom: 1px solid yellow;
-}
-
-h1 {
-  margin-left: 15px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 60%;
-  margin: auto;
-  background-color: aliceblue;
-  padding: 1rem;
-  border-radius: 16px;
-}
-
-.route {
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-  color: black;
-}
-
-input {
-  padding: 0.5rem;
-  border-radius: 16px;
-}
-
-input[type="submit"] {
-  width: fit-content;
-  background-color: green;
-  color: yellow;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border: none;
-  box-shadow: 1px 1px 5px black;
-  margin: auto;
-}
-
-.location {
-  width: fit-content;
-}
-
 @media only screen and (max-width: 768px) {
-  .route {
-    flex-direction: column;
-    /* justify-content: space-between; */
-    /* margin-bottom: 10px; */
-  }
-
   form {
     width: 75%;
+    margin: 0 10px;
+    /* Add margin to the left and right sides of the form */
   }
-
 }
