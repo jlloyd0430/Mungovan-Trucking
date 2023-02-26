@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 function Home() {
   const [jobType, setJobType] = useState("");
@@ -62,9 +63,14 @@ function Home() {
     const dateValue = event.target.value;
     setDate(dateValue);
   };
-  
-    const handleImageChange = (event) => {
+
+  const handleImageChange = (event) => {
     setImage(event.target.files[0]);
+  };
+  const [addJob, setAddJob] = useState(false);
+
+  const handleAddJobChange = (event) => {
+    setAddJob(event.target.checked);
   };
 
   return (
@@ -128,7 +134,7 @@ function Home() {
         onChange={handleNumObjectsChange}
       />
       <TextArea name="message" rows={10} placeholder="Enter Message" />
-          <label htmlFor="image-upload"></label>
+      <label htmlFor="image-upload"></label>
       <input id="image-upload" type="file" onChange={handleImageChange} />
       {image && (
         <div>
@@ -139,7 +145,7 @@ function Home() {
           />
         </div>
       )}
-       <div>
+      <div>
         <label>
           <input
             type="checkbox"
@@ -149,7 +155,7 @@ function Home() {
           Add job
         </label>
       </div>
-     <Button type="submit" value="Send" />
+      <Button type="submit" value="Send" />
     </form>
   );
 }
