@@ -77,10 +77,17 @@ function Home() {
         placeholder="Enter Message"
         onChange={handleMessageChange}
       />
-      <label>
-        Choose an image:
-        <input type="file" onChange={handleImageChange} />
-      </label>
+      <label htmlFor="image-upload"></label>
+      <input id="image-upload" type="file" onChange={handleImageChange} />
+      {image && (
+        <div>
+          <img
+            src={URL.createObjectURL(image)}
+            alt="Selected"
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
+        </div>
+      )}
       <Button type="submit" value={isSending ? "Sending..." : "Send"} />
     </form>
   );
