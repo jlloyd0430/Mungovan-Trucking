@@ -11,6 +11,21 @@ header {
   font-family: 'Lobster', cursive;
 }
 
+    .date-section {
+      display: flex;
+      flex-direction: column;
+      color: #333;
+      /* margin-top: 1rem; */
+      max-width: 200px;
+      height: 4rem;
+
+    }
+  
+    .date-section label {
+      margin-bottom: 0.5rem;
+    }
+
+
 nav {
   text-align: right;
 }
