@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-import img1 from "./images/img:1.JPG";
-import img2 from "./images/img:2.JPG";
-import img3 from "./images/img:3.JPG";
-import img4 from "./images/img:4.JPG";
-import img5 from "./images/img:5.JPG";
-import img7 from "./images/img:7.JPG";
-import img8 from "./images/img:8.JPG";
+import img1 from "./images/img1.JPG";
+import img2 from "./images/img2.JPG";
+import img3 from "./images/img3.JPG";
+import img4 from "./images/img4.JPG";
+import img5 from "./images/img5.JPG";
+import img6 from "./images/img6.JPG";
+import img7 from "./images/img7.JPG";
+import img8 from "./images/img8.JPG";
+import img9 from "./images/img9.JPG";
+import img10 from "./images/img10.JPG";
+import img11 from "./images/img11.JPG";
 
 function Contact() {
   const [currentImg, setCurrentImg] = useState(0);
@@ -18,8 +22,12 @@ function Contact() {
     { src: img3, alt: "Image 3" },
     { src: img4, alt: "Image 4" },
     { src: img5, alt: "Image 5" },
+    { src: img6, alt: "Image 6" },
     { src: img7, alt: "Image 7" },
     { src: img8, alt: "Image 8" },
+    { src: img9, alt: "Image 9" },
+    { src: img10, alt: "Image 10" },
+    { src: img11, alt: "Image 11" },
   ];
 
   useEffect(() => {
