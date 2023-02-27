@@ -57,7 +57,7 @@ function Contact() {
         <p></p>
         <p>
           Mungovan.land is an application made by Mungovan Trucking employees
-          exclusivley for Mungovan Trucking employees for the primary purpose of
+          exclusivley for employees with the primary purpose of
           providing resources and tools to make the day to day job a little bit
           easier.
         </p>
