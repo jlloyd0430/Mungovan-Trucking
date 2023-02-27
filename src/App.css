@@ -83,6 +83,63 @@ form {
   
 }
 
+#text-wrapper2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+#text-wrapper2 img {
+  max-width: 500px;
+  height: auto;
+  margin: 0.5rem;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.text-wrapper h2 {
+  text-align: center;
+}
+
+.text-wrapper p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.cta {
+  margin-top: 2rem;
+}
+
+.home-img {
+  border-radius: 10px;
+  border: 2px solid #ccc;
+}
+
+.book-now-btn {
+  padding: 1rem 2rem;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.disc {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
 .icons {
   display: flex;
   flex-direction: column;
@@ -90,9 +147,21 @@ form {
   width: 75%;
 }
 
+
+
 @media only screen and (max-width: 768px) {
   form {
     width: 90% !important;
     margin: auto !important;
   }
+
+     .home-img {
+       width: 100%;
+     }
+  
+     /* Add some margin to the images to create spacing between them */
+     #text-wrapper2 {
+       margin: 20px;
+     }
+  
 }
