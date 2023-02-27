@@ -1,237 +1,67 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
-function Home() {
-  const [jobType, setJobType] = useState("");
-  const [showRoutes, setShowRoutes] = useState(false);
-  const [showOneLocation, setShowOneLocation] = useState(false);
-  const [location, setLocation] = useState("");
-  const [objectType, setObjectType] = useState("");
-  const [numObjects, setNumObjects] = useState(0);
-  const [fromLocation, setFromLocation] = useState("");
-  const [toLocation, setToLocation] = useState("");
-  const [date, setDate] = useState("");
-  const [image, setImage] = useState(null);
+import img1 from "./images/img:1.JPG";
+import img2 from "./images/img:2.JPG";
+import img3 from "./images/img:3.JPG";
+import img4 from "./images/img:4.JPG";
+import img5 from "./images/img:5.JPG";
+import img7 from "./images/img:7.JPG";
+import img8 from "./images/img:8.JPG";
 
-  const handleJobTypeChange = (event) => {
-    const jobTypeValue = event.target.value;
-    setJobType(jobTypeValue);
+function Contact() {
+  const [currentImg, setCurrentImg] = useState(0);
 
-    if (jobTypeValue === "Delivery") {
-      setShowRoutes(true);
-      setShowOneLocation(false);
-    } else if (
-      jobTypeValue === "Cleanout" ||
-      jobTypeValue === "Pickup" ||
-      jobTypeValue === "Internal-move" ||
-      jobTypeValue === "Disposition"
-    ) {
-      setShowRoutes(false);
-      setShowOneLocation(true);
-    } else {
-      setShowRoutes(false);
-      setShowOneLocation(false);
-    }
-  };
+  const images = [
+    { src: img1, alt: "Image 1" },
+    { src: img2, alt: "Image 2" },
+    { src: img3, alt: "Image 3" },
+    { src: img4, alt: "Image 4" },
+    { src: img5, alt: "Image 5" },
+    { src: img7, alt: "Image 7" },
+    { src: img8, alt: "Image 8" },
+  ];
 
-  const handleFromLocationChange = (event) => {
-    const fromLocationValue = event.target.value;
-    setFromLocation(fromLocationValue);
-  };
-
-  const handleToLocationChange = (event) => {
-    const toLocationValue = event.target.value;
-    setToLocation(toLocationValue);
-  };
-
-  const handleLocationChange = (event) => {
-    const locationValue = event.target.value;
-    setLocation(locationValue);
-  };
-
-  const handleObjectTypeChange = (event) => {
-    const objectTypeValue = event.target.value;
-    setObjectType(objectTypeValue);
-  };
-
-  const handleNumObjectsChange = (event) => {
-    const numObjectsValue = event.target.value;
-    setNumObjects(numObjectsValue);
-  };
-
-  const handleDateChange = (event) => {
-    const dateValue = event.target.value;
-    setDate(dateValue);
-  };
-
-  const handleImageChange = (event) => {
-    setImage(event.target.files[0]);
-  };
-  const [addJob, setAddJob] = useState(false);
-
-  const handleAddJobChange = (event) => {
-    setAddJob(event.target.checked);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImg((currentImg + 1) % images.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [currentImg]);
 
   return (
-    <form action="https://formspree.io/f/mvonajop" method="post">
-      <Title className="Title" />
-      <div className="name-date-section">
-        <div className="name-section">
-          <Input
-            name="name"
-            type="text"
-            placeholder="Enter your Name..."
-            style={{ height: "2rem" }}
-          />
-
-          <div className="date-section">
-            <label htmlFor="date-input">Date</label>
-            <Input
-              id="date-input"
-              name="date"
-              type="date"
-              onChange={handleDateChange}
-            />
-          </div>
-        </div>
-      </div>
-      <Input name="email" type="email" placeholder="Enter your Email..." />
-      <Select
-        name="Job Type"
-        options={[
-          "Cleanout",
-          "Delivery",
-          "Pickup",
-          "Internal-move",
-          "Disposition",
-        ]}
-        onChange={handleJobTypeChange}
-      />
-      {showRoutes && (
-        <div className="route">
-          <Input
-            className="location"
-            name="From"
-            type="text"
-            placeholder="Enter From Location"
-            onChange={handleFromLocationChange}
-          />
-          To
-          <Input
-            className="location"
-            name="To"
-            type="text"
-            placeholder="Enter To Location"
-            onChange={handleToLocationChange}
-          />
-        </div>
-      )}
-      {showOneLocation && (
-        <Input
-          className="location"
-          name="Location"
-          type="text"
-          placeholder="Enter To Location"
-          onChange={handleToLocationChange}
-        />
-      )}
-      <Select
-        name="Object Type"
-        options={["Gaylords", "Cones", "Tarps", "Masonite"]}
-        onChange={handleObjectTypeChange}
-      />
-      <Input
-        name="Number of Objects"
-        type="number"
-        placeholder="Enter Number of Objects"
-        onChange={handleNumObjectsChange}
-      />
-      <TextArea name="message" rows={10} placeholder="Enter Message" />
-      <label htmlFor="image-upload"></label>
-      <input id="image-upload" type="file" onChange={handleImageChange} />
-      {image && (
-        <div>
+    <>
+      <div id="text-wrapper2">
+        {images.map((image, index) => (
           <img
-            src={URL.createObjectURL(image)}
-            alt="Selected"
-            style={{ maxWidth: "100%", height: "auto" }}
+            className="home-img"
+            key={index}
+            src={image.src}
+            alt={image.alt}
+            style={{ display: currentImg === index ? "block" : "none" }}
           />
-        </div>
-      )}
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            checked={addJob}
-            onChange={handleAddJobChange}
-          />
-          Add job
-        </label>
+        ))}
       </div>
-      <Button type="submit" value="Send" />
-    </form>
+
+      <h2>Mungovan Trucking .llc</h2>
+
+      <div className="text-wrapper">
+        <p></p>
+        <p>
+          Mungovan.land is an application made by Mungovan Trucking employees
+          exclusivley for Mungovan Trucking employees for the primary purpose of
+          providing resources and tools to make the day to day job a little bit
+          easier.
+        </p>
+        <p className="price">Beta version1.0</p>
+
+        <p className="disc">
+          Disclosure: This application is still in the beta testing phase, if
+          you wish to make an inquiry just message me at 7748135597
+        </p>
+      </div>
+    </>
   );
 }
 
-function Input({ name, type, placeholder }) {
-  return (
-    <input
-      name={name}
-      type={type}
-      placeholder={placeholder}
-      style={{ padding: "0.5rem", borderRadius: "16px" }}
-    />
-  );
-}
-
-function Select({ name, options, onChange }) {
-  return (
-    <select
-      name={name}
-      style={{ padding: "0.5rem", borderRadius: "16px" }}
-      onChange={onChange}
-    >
-      <option value="">Choose an JobType</option>
-      {options.map((option) => (
-        <option key={option}>{option}</option>
-      ))}
-    </select>
-  );
-}
-
-function TextArea({ name, rows, placeholder }) {
-  return (
-    <textarea
-      name={name}
-      rows={rows}
-      placeholder={placeholder}
-      style={{ padding: "0.5rem", borderRadius: "16px" }}
-    />
-  );
-}
-
-function Title() {
-  return <h1>Daily Worksheet</h1>;
-}
-
-function Button({ type, value }) {
-  return (
-    <input
-      type={type}
-      value={value}
-      style={{
-        width: "fit-content",
-        backgroundColor: "green",
-        color: "yellow",
-        padding: "0.5rem 1rem",
-        cursor: "pointer",
-        border: "none",
-        boxShadow: "1px 1px 5px black",
-        margin: "auto",
-      }}
-    />
-  );
-}
-
-export default Home;
+export default Contact;
