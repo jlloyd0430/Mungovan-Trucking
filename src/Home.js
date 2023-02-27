@@ -64,7 +64,7 @@ function Contact() {
         <p className="price">Beta version1.0</p>
 
         <p className="disc">
-          Disclosure: This application is still in the beta testing phase, if
+          Disclosure: This application is still under construction, if
           you wish to make an inquiry just message me at 7748135597
         </p>
       </div>
