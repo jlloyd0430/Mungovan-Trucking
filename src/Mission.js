@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AddressBook.css";
 
 const addresses = [
@@ -59,9 +59,28 @@ const addresses = [
 ];
 
 function Mission() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredAddresses = addresses.filter((address) => {
+    const searchRegex = new RegExp(searchQuery, "i"); // case-insensitive search
+    return (
+      searchRegex.test(address.town) ||
+      searchRegex.test(address.streetAddress) ||
+      searchRegex.test(address.state) ||
+      searchRegex.test(address.zip)
+    );
+  });
+
   return (
     <div>
       <h1>Verizon CO Buildings Addresses</h1>
+      <input
+        className="searchbar"
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder="Search addresses"
+      />
       <table>
         <thead>
           <tr>
@@ -72,7 +91,7 @@ function Mission() {
           </tr>
         </thead>
         <tbody>
-          {addresses.map((address, index) => (
+          {filteredAddresses.map((address, index) => (
             <tr key={index}>
               <td>{address.town}</td>
               <td>{address.streetAddress}</td>
