@@ -45,10 +45,7 @@ function Home() {
   };
 
   // Define event handler for additional object type select
-  const handleAdditionalObjectTypeChange = (event) => {
-    const additionalObjectTypeValue = event.target.value;
-    setAdditionalObjectType(additionalObjectTypeValue);
-  };
+
 
   const handleFromLocationChange = (event) => {
     const fromLocationValue = event.target.value;
