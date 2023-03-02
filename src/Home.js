@@ -1,54 +1,21 @@
-import { useState, useEffect } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import "./App.css";
+const images = [  { src: img1, alt: "Image 1" },  { src: img2, alt: "Image 2" },  { src: img3, alt: "Image 3" },  { src: img4, alt: "Image 4" },  { src: img5, alt: "Image 5" },  { src: img6, alt: "Image 6" },  { src: img7, alt: "Image 7" },  { src: img8, alt: "Image 8" },  { src: img9, alt: "Image 9" },  { src: img10, alt: "Image 10" },  { src: img11, alt: "Image 11" },];
 
-import img1 from "./images/img1.JPG";
-import img2 from "./images/img2.JPG";
-import img3 from "./images/img3.JPG";
-import img4 from "./images/img4.JPG";
-import img5 from "./images/img5.JPG";
-import img6 from "./images/img6.JPG";
-import img7 from "./images/img7.JPG";
-import img8 from "./images/img8.JPG";
-import img9 from "./images/img9.JPG";
-import img10 from "./images/img10.JPG";
-import img11 from "./images/img11.JPG";
-  
-    
-function Contact() {
-  const [currentImg, setCurrentImg] = useState(0);
-  const [intervalId, setIntervalId] = useState(null);
+useEffect(() => {
+  // Clear the previous interval before starting a new one
+  clearInterval(intervalId);
 
-  const images = [
-    { src: img1, alt: "Image 1" },
-    { src: img2, alt: "Image 2" },
-    { src: img3, alt: "Image 3" },
-    { src: img4, alt: "Image 4" },
-    { src: img5, alt: "Image 5" },
-    { src: img6, alt: "Image 6" },
-    { src: img7, alt: "Image 7" },
-    { src: img8, alt: "Image 8" },
-    { src: img9, alt: "Image 9" },
-    { src: img10, alt: "Image 10" },
-    { src: img11, alt: "Image 11" },
-    { src: img1, alt: "Image 1" }, // duplicate of image 1
-    { src: img2, alt: "Image 2" }, // duplicate of image 2
-  ];
+  // Start a new interval to cycle through the images
+  const id = setInterval(() => {
+    setCurrentImg((currentImg + 1) % images.length);
+  }, 2500);
 
-  useEffect(() => {
-    // Clear the previous interval before starting a new one
-    clearInterval(intervalId);
+  // Set the interval ID
+  setIntervalId(id);
 
-    // Start a new interval to cycle through the images
-    const id = setInterval(() => {
-      setCurrentImg((currentImg + 1) % images.length);
-    }, 2500);
-    setIntervalId(id);
+  // Clear the interval when the component unmounts
+  return () => clearInterval(id);
+}, [currentImg, images, setIntervalId]);
 
-    // Clear the interval when the component unmounts
-    return () => clearInterval(id);
-  }, [currentImg, images.length, intervalId]);
 
   return (
     <>
