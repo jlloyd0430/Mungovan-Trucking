@@ -34,6 +34,22 @@ function Home() {
     }
   };
 
+
+  // Define additional state variables
+  const [showAdditionalFields, setShowAdditionalFields] = useState(false);
+  const [additionalObjectType, setAdditionalObjectType] = useState("");
+
+  // Define event handler for checkbox
+  const handleAddJobChange = (event) => {
+    setShowAdditionalFields(event.target.checked);
+  };
+
+  // Define event handler for additional object type select
+  const handleAdditionalObjectTypeChange = (event) => {
+    const additionalObjectTypeValue = event.target.value;
+    setAdditionalObjectType(additionalObjectTypeValue);
+  };
+
   const handleFromLocationChange = (event) => {
     const fromLocationValue = event.target.value;
     setFromLocation(fromLocationValue);
@@ -160,16 +176,27 @@ function Home() {
           />
         </div>
       )}
-      <div>
+   <div>
         <label>
           <input
             type="checkbox"
-            checked={addJob}
+            checked={showAdditionalFields}
             onChange={handleAddJobChange}
           />
           Add job
         </label>
       </div>
+      {/* Include additional fields if checkbox is checked */}
+      {showAdditionalFields && (
+        <>
+          <Select
+            name="Additional Job Type"
+            options={["Cleanout", "Delivery", "Pickup", "Internal-move", "Disposition"]}
+            onChange={handleAdditionalJobTypeChange}
+          />
+          <TextArea name="additionalMessage" rows={10} placeholder="Enter Additional Message" />
+        </>
+      )}
       <Button type="submit" value="Send" />
     </form>
   );
