@@ -86,6 +86,12 @@ function Home() {
   const [addJob, setAddJob] = useState(false);
 
 
+  const handleAdditionalObjectTypeChange = (event) => {
+    const additionalObjectTypeValue = event.target.value;
+    setAdditionalObjectType(additionalObjectTypeValue);
+  };
+
+
   return (
     <form action="https://formspree.io/f/mvonajop" method="post">
       <Title className="Title" />
