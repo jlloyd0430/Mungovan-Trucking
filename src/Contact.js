@@ -85,9 +85,6 @@ function Home() {
   };
   const [addJob, setAddJob] = useState(false);
 
-  const handleAddJobChange = (event) => {
-    setAddJob(event.target.checked);
-  };
 
   return (
     <form action="https://formspree.io/f/mvonajop" method="post">
