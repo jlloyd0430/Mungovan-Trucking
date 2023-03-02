@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "./App.css";
 
 import img1 from "./images/img1.JPG";
@@ -15,6 +17,7 @@ import img11 from "./images/img11.JPG";
 
 function Contact() {
   const [currentImg, setCurrentImg] = useState(0);
+  const [intervalId, setIntervalId] = useState(null);
 
   const images = [
     { src: img1, alt: "Image 1" },
@@ -31,22 +34,30 @@ function Contact() {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    // Clear the previous interval before starting a new one
+    clearInterval(intervalId);
+
+    // Start a new interval to cycle through the images
+    const id = setInterval(() => {
       setCurrentImg((currentImg + 1) % images.length);
     }, 2500);
-    return () => clearInterval(interval);
-  }, [currentImg]);
+    setIntervalId(id);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(id);
+  }, [currentImg, images.length, intervalId]);
 
   return (
     <>
-      <div id="text-wrapper2">
+      <div id="carousel">
         {images.map((image, index) => (
-          <img
+          <LazyLoadImage
             className="home-img"
             key={index}
             src={image.src}
             alt={image.alt}
-            style={{ display: currentImg === index ? "block" : "none" }}
+            style={{ transform: `translateX(-${currentImg * 100}%)` }}
+            effect="blur"
           />
         ))}
       </div>
@@ -57,15 +68,14 @@ function Contact() {
         <p></p>
         <p>
           Mungovan.land is an application made by Mungovan Trucking employees
-          exclusivley for employees with the primary purpose of
-          providing resources and tools to make the day to day job a little bit
-          easier.
+          and affiliates exclusivley with the primary purpose of providing
+          resources and tools to make the day to day job a little bit easier.
         </p>
         <p className="price">Beta version1.0</p>
 
         <p className="disc">
-          Disclosure: This application is still under construction, if
-          you wish to make an inquiry just message me at 7748135597
+          Disclosure: This application is still under construction, if you wish
+          to make an inquiry just message me at 7748135597
         </p>
       </div>
     </>
