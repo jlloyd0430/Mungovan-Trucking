@@ -20,6 +20,10 @@ header {
   font-family: 'Lobster', cursive;
 }
 
+h2 {
+text-align: center;
+}
+
 .date-section {
   display: flex;
   flex-direction: column;
@@ -136,19 +140,10 @@ h2 {
   margin-top: 2rem;
 }
 
-#carousel {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-  animation: slide 25s infinite linear;
-  height: auto;
-  
-}
-
 .home-img {
   display: block;
   margin: 10px;
-  width: 300px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
   border: 2px solid #ccc;
@@ -175,20 +170,6 @@ h2 {
   width: 75%;
 }
 
-
-
-@keyframes slide {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-
-
 @media only screen and (max-width: 768px) {
   form {
     width: 90% !important;
@@ -196,12 +177,7 @@ h2 {
   }
 
   .home-img {
-    display: block;
-      margin: 10px;
-      width: 180px;
-      height: auto;
-      border-radius: 10px;
-      border: 2px solid #ccc;
+width: 100%;
   }
 
   /* Add some margin to the images to create spacing between them */
