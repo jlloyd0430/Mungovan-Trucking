@@ -1,6 +1,6 @@
+
 import { useState, useEffect } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+
 import "./App.css";
 
 import img1 from "./images/img1.JPG";
@@ -17,7 +17,6 @@ import img11 from "./images/img11.JPG";
 
 function Contact() {
   const [currentImg, setCurrentImg] = useState(0);
-  const [intervalId, setIntervalId] = useState(null);
 
   const images = [
     { src: img1, alt: "Image 1" },
@@ -34,30 +33,24 @@ function Contact() {
   ];
 
   useEffect(() => {
-    // Clear the previous interval before starting a new one
-    clearInterval(intervalId);
-
-    // Start a new interval to cycle through the images
-    const id = setInterval(() => {
+const interval = setInterval(() => {
+ 
       setCurrentImg((currentImg + 1) % images.length);
     }, 2500);
-    setIntervalId(id);
-
-    // Clear the interval when the component unmounts
-    return () => clearInterval(id);
-  }, [currentImg, images.length, intervalId]);
+    return () => clearInterval(interval);
+},[currentImg]);
 
   return (
     <>
-      <div id="carousel">
+
+      <div id="text-wrapper2">
         {images.map((image, index) => (
-          <LazyLoadImage
+          <img
             className="home-img"
             key={index}
             src={image.src}
             alt={image.alt}
-            style={{ transform: `translateX(-${currentImg * 100}%)` }}
-            effect="blur"
+            style={{ display: currentImg === index? “block”  : “none” }}
           />
         ))}
       </div>
