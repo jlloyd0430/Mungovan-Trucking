@@ -34,7 +34,6 @@ function Home() {
     }
   };
 
-
   // Define additional state variables
   const [showAdditionalFields, setShowAdditionalFields] = useState(false);
   const [additionalObjectType, setAdditionalObjectType] = useState("");
@@ -45,7 +44,10 @@ function Home() {
   };
 
   // Define event handler for additional object type select
-
+  const handleAdditionalJobTypeChange = (event) => {
+    const additionalObjectTypeValue = event.target.value;
+    setAdditionalObjectType(additionalObjectTypeValue);
+  };
 
   const handleFromLocationChange = (event) => {
     const fromLocationValue = event.target.value;
@@ -81,13 +83,6 @@ function Home() {
     setImage(event.target.files[0]);
   };
   const [addJob, setAddJob] = useState(false);
-
-
-  const handleAdditionalObjectTypeChange = (event) => {
-    const additionalObjectTypeValue = event.target.value;
-    setAdditionalObjectType(additionalObjectTypeValue);
-  };
-
 
   return (
     <form action="https://formspree.io/f/mvonajop" method="post">
