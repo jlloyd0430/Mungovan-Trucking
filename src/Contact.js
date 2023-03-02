@@ -190,6 +190,16 @@ function Home() {
             onChange={handleAdditionalJobTypeChange}
           />
           <TextArea name="additionalMessage" rows={10} placeholder="Enter Additional Message" />
+          <div>
+        <label>
+          <input
+            type="checkbox"
+            checked={showAdditionalFields}
+            onChange={handleAddJobChange}
+          />
+          Add job
+        </label>
+      </div>
         </>
       )}
       <Button type="submit" value="Send" />
