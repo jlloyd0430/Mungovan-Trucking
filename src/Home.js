@@ -1,4 +1,22 @@
-  function Contact() {
+import { useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import "./App.css";
+
+import img1 from "./images/img1.JPG";
+import img2 from "./images/img2.JPG";
+import img3 from "./images/img3.JPG";
+import img4 from "./images/img4.JPG";
+import img5 from "./images/img5.JPG";
+import img6 from "./images/img6.JPG";
+import img7 from "./images/img7.JPG";
+import img8 from "./images/img8.JPG";
+import img9 from "./images/img9.JPG";
+import img10 from "./images/img10.JPG";
+import img11 from "./images/img11.JPG";
+  
+    
+function Contact() {
   const [currentImg, setCurrentImg] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
 
