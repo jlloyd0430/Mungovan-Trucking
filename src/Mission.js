@@ -680,8 +680,8 @@ zip: "02141",
     town: "Huntington",
     streetAddress: "Main st",
     state: "MA",
-    zip: "01050
-
+    zip: "01050",
+  },
   {
     town: "Hyde Park",
     streetAddress: "50 Harvard Ave",
