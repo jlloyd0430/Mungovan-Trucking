@@ -543,12 +543,66 @@ zip: "02141",
     streetAddress: "13 Elm St",
     state: "MA",
     zip: "01930",
-  }
+  },
   {
      town: "Grafton",
     streetAddress: "worcester St",
     state: "MA",
     zip: "01519",
+  },
+  {
+    town: "Hyde Park",
+    streetAddress: "50 Harvard Ave",
+    state: "MA",
+    zip: "02136",
+  },
+  {
+    town: "Indian Orchard",
+    streetAddress: "Rapalus St & Ludlow Ave",
+    state: "MA",
+    zip: "01151",
+  },
+  {
+    town: "Ipswich",
+    streetAddress: "79 County Rd",
+    state: "MA",
+    zip: "01938",
+  },
+  {
+    town: "Kingston",
+    streetAddress: "Summer St & Linden St",
+    state: "MA",
+    zip: "02364",
+  },
+  {
+    town: "Lawrence",
+    streetAddress: "425 Canal St",
+    state: "MA",
+    zip: "01840",
+  },
+  {
+    town: "Lee",
+    streetAddress: "47 High St",
+    state: "MA",
+    zip: "01238",
+  },
+  {
+    town: "Leicester",
+    streetAddress: "Grove St",
+    state: "MA",
+    zip: "01524",
+  },
+  {
+    town: "Lenox",
+    streetAddress: "60 Walker St",
+    state: "MA",
+    zip: "01240",
+  },
+  {
+    town: "Leominster",
+    streetAddress: "2 School St",
+    state: "MA",
+    zip: "01453",
   }
 ];
 
