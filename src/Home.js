@@ -74,7 +74,7 @@ function Contact() {
 
         <p className="disc">
           Disclosure: This application is still under construction, if you wish
-          to make an inquiry just message me at 7748135597
+        to request a feature just message me at 7748135597
         </p>
       </div>
     </>
