@@ -1,5 +1,5 @@
 body {
-  background-color: green !important;
+  background-color: #014421 !important;
   margin: auto;
 }
 .searchbar {
@@ -47,7 +47,7 @@ nav a {
 form,
 h1 {
   margin-top: 15px;
-  color: green;
+  color: #014421;
 }
 h2 {
   color: #fff;
