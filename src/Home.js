@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -41,40 +40,47 @@ function Contact() {
     // Start a new interval to cycle through the images
     const id = setInterval(() => {
       setCurrentImg((currentImg + 1) % images.length);
-    }, 2500);
+    }, 4000);
     setIntervalId(id);
 
     // Clear the interval when the component unmounts
     return () => clearInterval(id);
-  }, [currentImg, images.length, intervalId]);
+  }, [currentImg, images.length, intervalId, setCurrentImg, images]);
 
   return (
     <>
-      <div id="carousel" style={{ width: `${images.length * 100}%` }}>
-        {images.map((image, index) => (
-          <LazyLoadImage
-            className="home-img"
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            style={{ transform: `translateX(-${currentImg * (100 / images.length)}%)` }}
-            effect="blur"
-          />
-        ))}
+      <div className="carousel-wrapper">
+        <div
+          id="carousel"
+          style={{
+            width: `${images.length * 100}%`,
+            transform: `translateX(-${currentImg * (100 / images.length)}%)`,
+          }}
+        >
+          {images.map((image, index) => (
+            <LazyLoadImage
+              className="home-img"
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              effect="blur"
+            />
+          ))}
+        </div>
       </div>
       <h2>Mungovan Trucking .llc</h2>
       <div className="text-wrapper">
         <p></p>
         <p>
           Mungovan.land is an application made by Mungovan Trucking employees
-          and affiliates exclusivley with the primary purpose of providing
+          and affiliates exclusively with the primary purpose of providing
           resources and tools to make the day to day job a little bit easier.
         </p>
         <p className="price">Beta version1.0</p>
 
         <p className="disc">
           Disclosure: This application is still under construction, if you wish
-        to request a feature just message me at 7748135597
+          to request a feature just message me at 7748135597
         </p>
       </div>
     </>
