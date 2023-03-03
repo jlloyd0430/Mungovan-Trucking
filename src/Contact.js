@@ -192,7 +192,6 @@ const handleAddJobChange = (event) => {
       {/* Include additional fields if checkbox is checked */}
       {showAdditionalFields && (
         <>
-          <Select
          {Array.from({ length: numJobs }).map((_, i) => (
   <div key={i}>
     <Select
