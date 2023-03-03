@@ -290,10 +290,14 @@ function Mission() {
         </tbody>
       </table>
       {currentPage > 0 && (
-        <button onClick={handlePrevPage}>Previous</button>
+        <button 
+          className="pagination-button"
+          onClick={handlePrevPage}>Previous</button>
       )}
       {currentPage < totalPages - 1 && (
-        <button onClick={handleNextPage}>Next</button>
+        <button 
+          className="pagination-button"
+          onClick={handleNextPage}>Next</button>
       )}
     </div>
   );
