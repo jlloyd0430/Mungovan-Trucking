@@ -50,14 +50,14 @@ function Contact() {
 
   return (
     <>
-      <div id="carousel">
+      <div id="carousel" style={{ width: `${images.length * 100}%` }}>
         {images.map((image, index) => (
           <LazyLoadImage
             className="home-img"
             key={index}
             src={image.src}
             alt={image.alt}
-            style={{ transform: `translateX(-${currentImg * 100}%)` }}
+            style={{ transform: `translateX(-${currentImg * (100 / images.length)}%)` }}
             effect="blur"
           />
         ))}
@@ -80,4 +80,5 @@ function Contact() {
     </>
   );
 }
+
 export default Contact;
