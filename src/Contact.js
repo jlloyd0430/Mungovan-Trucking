@@ -37,19 +37,11 @@ function Home() {
   // Define additional state variables
   const [showAdditionalFields, setShowAdditionalFields] = useState(false);
   const [additionalObjectType, setAdditionalObjectType] = useState("");
-  
-  const [numJobs, setNumJobs] = useState(1);
-
 
   // Define event handler for checkbox
-const handleAddJobChange = (event) => {
-  const checked = event.target.checked;
-  setShowAdditionalFields(checked);
-  if (checked) {
-    setNumJobs(numJobs + 1);
-  }
-};
-
+  const handleAddJobChange = (event) => {
+    setShowAdditionalFields(event.target.checked);
+  };
 
   // Define event handler for additional object type select
   const handleAdditionalJobTypeChange = (event) => {
@@ -179,7 +171,7 @@ const handleAddJobChange = (event) => {
           />
         </div>
       )}
-   <div>
+      <div>
         <label>
           <input
             type="checkbox"
@@ -192,26 +184,22 @@ const handleAddJobChange = (event) => {
       {/* Include additional fields if checkbox is checked */}
       {showAdditionalFields && (
         <>
-         {Array.from({ length: numJobs }).map((_, i) => (
-  <div key={i}>
-    <Select
-      name={`Job Type ${i + 1}`}
-      options={["Cleanout", "Delivery", "Pickup", "Internal-move", "Disposition"]}
-      onChange={(event) => handleJobTypeChange(event, i)}
-    />
-    <TextArea name={`message ${i + 1}`} rows={10} placeholder={`Enter Message ${i + 1}`} />
-  </div>
-))}
-
-<label>
-  <input
-    type="checkbox"
-    checked={showAdditionalFields}
-    onChange={handleAddJobChange}
-  />
-  Add job
-</label>
-
+          <Select
+            name="Additional Job Type"
+            options={[
+              "Cleanout",
+              "Delivery",
+              "Pickup",
+              "Internal-move",
+              "Disposition",
+            ]}
+            onChange={handleAdditionalJobTypeChange}
+          />
+          <TextArea
+            name="additionalMessage"
+            rows={10}
+            placeholder="Enter Additional Message"
+          />
         </>
       )}
       <Button type="submit" value="Send" />
