@@ -94,6 +94,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  color: #fff;
 }
 .text-wrapper h2 {
   text-align: center;
