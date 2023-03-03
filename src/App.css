@@ -2,6 +2,7 @@ body {
   background-color: #014421 !important;
   margin: auto;
 }
+
 .searchbar {
   margin-bottom: 10px;
   display: flex;
@@ -9,9 +10,11 @@ body {
   padding: 7px;
   border-radius: 25px;
 }
+
 .col-md-6 {
   font-family: 'Lobster', cursive;
 }
+
 header {
   font-family: 'Lobster', cursive;
 }
@@ -24,34 +27,43 @@ header {
   max-width: 200px;
   height: 4rem;
 }
+
 .date-section label {
   margin-bottom: 0.5rem;
 }
+
 nav {
   text-align: right;
 }
+
 h1 {
   color: grey;
 }
+
 a {
   display: inline-block;
   color: white;
 }
+
 a:hover {
   color: yellow;
   text-decoration: underline;
 }
+
 nav a {
   padding: 10px 20px;
 }
+
 form,
 h1 {
   margin-top: 15px;
   color: #014421;
 }
+
 h2 {
   color: #fff;
 }
+
 form {
   margin: auto;
   display: flex;
@@ -62,6 +74,7 @@ form {
   padding: 1rem;
   border-radius: 16px;
 }
+
 .name-section {
   display: flex;
   gap: 5rem;
@@ -69,9 +82,11 @@ form {
   margin-bottom: 1rem;
   justify-content: space-between;
 }
+
 .date-section {
   flex: 1;
 }
+
 #text-wrapper2 {
   display: flex;
   justify-content: center;
@@ -80,15 +95,18 @@ form {
   margin-top: 2rem;
   margin: auto;
 }
+
 h2 {
   text-align: center;
 }
+
 #text-wrapper2 img {
   margin: 20px;
   max-width: 450px;
   height: auto;
   /* margin: 0.1rem; */
 }
+
 .text-wrapper {
   display: flex;
   flex-direction: column;
@@ -96,25 +114,30 @@ h2 {
   margin-top: 2rem;
   color: #fff;
 }
+
 .text-wrapper h2 {
   text-align: center;
 }
+
 .text-wrapper p {
   text-align: center;
   margin-top: 1rem;
 }
+
 .price {
   font-weight: bold;
 }
+
 .cta {
   margin-top: 2rem;
 }
 
 #carousel {
+  justify-content: center;
   display: flex;
-  width: 100%;
+  width: 500px;
   overflow: hidden;
-  animation: slide 25s infinite linear;
+  animation: slide 90s infinite linear both 0s;
   height: auto;
 
 }
@@ -122,11 +145,12 @@ h2 {
 .home-img {
   display: block;
   margin: 10px;
-  width: 300px;
+  width: 200px;
   height: auto;
   border-radius: 10px;
   border: 2px solid #ccc;
 }
+
 .book-now-btn {
   padding: 1rem 2rem;
   background-color: #4CAF50;
@@ -134,11 +158,13 @@ h2 {
   text-decoration: none;
   border-radius: 5px;
 }
+
 .disc {
   text-align: center;
   margin-top: 2rem;
   font-size: 0.8rem;
 }
+
 .icons {
   display: flex;
   flex-direction: column;
@@ -168,23 +194,23 @@ h2 {
 
   .home-img {
     display: block;
-      margin: 10px;
-      width: 180px;
-      height: auto;
-      border-radius: 10px;
-      border: 2px solid #ccc;
+    margin: 10px;
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #ccc;
   }
-  
-  
+
+
 
   /* Add some margin to the images to create spacing between them */
-#text-wrapper2 {
-  flex-direction: column;
-  align-items: center;
-}
-#text-wrapper2 img {
-  margin: 20px 0;
-}
+  #text-wrapper2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #text-wrapper2 img {
+    margin: 20px 0;
+  }
 
 }
-
