@@ -236,6 +236,8 @@ import "./AddressBook.css";
 
 function Mission() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(0);
+  const addressesPerPage = 10; // Change this to the desired number of addresses per page or per scroll.
 
   const filteredAddresses = addresses.filter((address) => {
     const searchRegex = new RegExp(searchQuery, "i"); // case-insensitive search
@@ -245,7 +247,17 @@ function Mission() {
       searchRegex.test(address.state) ||
       searchRegex.test(address.zip)
     );
-  });
+  }).slice(currentPage * addressesPerPage, (currentPage + 1) * addressesPerPage);
+
+  const totalPages = Math.ceil(filteredAddresses.length / addressesPerPage);
+
+  function handlePrevPage() {
+    setCurrentPage((prevPage) => prevPage - 1);
+  }
+
+  function handleNextPage() {
+    setCurrentPage((prevPage) => prevPage + 1);
+  }
 
   return (
     <div>
@@ -277,6 +289,12 @@ function Mission() {
           ))}
         </tbody>
       </table>
+      {currentPage > 0 && (
+        <button onClick={handlePrevPage}>Previous</button>
+      )}
+      {currentPage < totalPages - 1 && (
+        <button onClick={handleNextPage}>Next</button>
+      )}
     </div>
   );
 }
