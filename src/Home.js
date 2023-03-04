@@ -34,18 +34,21 @@ function Contact() {
   ];
 
   useEffect(() => {
-    // Clear the previous interval before starting a new one
-    clearInterval(intervalId);
+    // Preload images
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image.src;
+    });
 
-    // Start a new interval to cycle through the images
+    // Start interval
     const id = setInterval(() => {
       setCurrentImg((currentImg + 1) % images.length);
     }, 4000);
     setIntervalId(id);
 
-    // Clear the interval when the component unmounts
+    // Clear interval
     return () => clearInterval(id);
-  }, [currentImg, images.length, intervalId, setCurrentImg, images]);
+  }, [images]);
 
   return (
     <>
