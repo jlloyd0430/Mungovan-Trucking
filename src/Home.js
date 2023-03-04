@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "./App.css";
 
 import img1 from "./images/img1.JPG";
@@ -41,7 +43,7 @@ function Contact() {
   const carouselStyle = {
     width: `${(images.length + 1) * 100}%`,
     transform: `translateX(-${currentImg * (100 / (images.length + 1))}%)`,
-    transition: "transform ease-out",
+    transition: "transform 1s ease-out",
   };
 
   return (
@@ -49,19 +51,21 @@ function Contact() {
       <div className="carousel-wrapper">
         <div id="carousel" style={carouselStyle}>
           {images.map((image, index) => (
-            <img
+            <LazyLoadImage
               className="home-img"
               key={index}
               src={image.src}
               alt={image.alt}
+              effect="blur"
             />
           ))}
           {/* Duplicate the first image to the end to create the infinite loop */}
-          <img
+          <LazyLoadImage
             className="home-img"
             key={-1}
             src={images[0].src}
             alt={images[0].alt}
+            effect="blur"
           />
         </div>
       </div>
