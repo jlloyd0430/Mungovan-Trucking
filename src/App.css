@@ -132,28 +132,23 @@ h2 {
   margin-top: 2rem;
 }
 
-#carousel-container {
+.carousel-wrapper {
+  max-width: 100%;
   overflow: hidden;
 }
 
 #carousel {
-  justify-content: center;
   display: flex;
-  width: 500px;
-  overflow: hidden;
-  animation: slide 90s infinite linear both 0s;
-  height: auto;
-
+  transition: transform 0.5s ease-in-out;
+  max-width: calc(100vw - 40px); /* Adjust 40px to fit your layout */
 }
 
 .home-img {
-  display: block;
-  margin: 10px;
-  width: 200px;
+  flex-shrink: 0;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
-  border: 2px solid #ccc;
 }
+
 
 .book-now-btn {
   padding: 1rem 2rem;
