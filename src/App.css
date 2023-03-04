@@ -132,6 +132,10 @@ h2 {
   margin-top: 2rem;
 }
 
+#carousel-container {
+  overflow: hidden;
+}
+
 #carousel {
   justify-content: center;
   display: flex;
