@@ -138,9 +138,12 @@ h2 {
 }
 
 #carousel {
+  justify-content: center;
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  max-width: calc(100vw - 40px); /* Adjust 40px to fit your layout */
+  width: 500px;
+  overflow: hidden;
+  animation: slide 25s infinite linear both 0s;
+  height: auto;
 }
 
 .home-img {
