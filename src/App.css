@@ -140,9 +140,9 @@ h2 {
 #carousel {
   justify-content: center;
   display: flex;
-  width: 500px;
+  width: 450px;
   overflow: hidden;
-  animation: slide 25s infinite linear both 0s;
+  animation: slide 95s infinite linear both 0s;
   height: auto;
 }
 
