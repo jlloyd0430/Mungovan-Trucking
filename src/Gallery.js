@@ -1,8 +1,4 @@
 import Photo from "./Photo";
-import truckingImg from "./trucking.jpg";
-import warehousingImg from "./warehousing.jpg";
-import recyclingImg from "./recycling.jpg";
-import "./Gallery.css";
 
 function Gallery() {
   return (
