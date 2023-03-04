@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav className="col-md-6">
       <Link to="/mission">Address-Log</Link>
-      {/* <Link to="/gallery">Tool/Sheet</Link> */}
+      <Link to="/gallery">Services</Link>
       <Link to="/contact">Worksheet</Link>
     </nav>
   );
