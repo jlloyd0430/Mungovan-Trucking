@@ -17,7 +17,6 @@ import img11 from "./images/img11.JPG";
 
 function Contact() {
   const [currentImg, setCurrentImg] = useState(0);
-  const [intervalId, setIntervalId] = useState(null);
 
   const images = [
     { src: img1, alt: "Image 1" },
@@ -34,32 +33,23 @@ function Contact() {
   ];
 
   useEffect(() => {
-    // Preload images
-    images.forEach((image) => {
-      const img = new Image();
-      img.src = image.src;
-    });
-
-    // Start interval
-    const id = setInterval(() => {
+    const intervalId = setInterval(() => {
       setCurrentImg((currentImg + 1) % images.length);
     }, 4000);
-    setIntervalId(id);
 
-    // Clear interval
-    return () => clearInterval(id);
-  }, [images]);
+    return () => clearInterval(intervalId);
+  }, [currentImg, images.length]);
+
+  const carouselStyle = {
+    width: `${(images.length + 1) * 100}%`,
+    transform: `translateX(-${currentImg * (100 / (images.length + 1))}%)`,
+    transition: "transform 1s ease-out",
+  };
 
   return (
     <>
       <div className="carousel-wrapper">
-        <div
-          id="carousel"
-          style={{
-            width: `${images.length * 100}%`,
-            transform: `translateX(-${currentImg * (100 / images.length)}%)`,
-          }}
-        >
+        <div id="carousel" style={carouselStyle}>
           {images.map((image, index) => (
             <LazyLoadImage
               className="home-img"
@@ -69,6 +59,14 @@ function Contact() {
               effect="blur"
             />
           ))}
+          {/* Duplicate the first image to the end to create the infinite loop */}
+          <LazyLoadImage
+            className="home-img"
+            key={-1}
+            src={images[0].src}
+            alt={images[0].alt}
+            effect="blur"
+          />
         </div>
       </div>
       <h2>Mungovan Trucking .llc</h2>
