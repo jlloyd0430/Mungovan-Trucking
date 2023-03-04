@@ -795,12 +795,12 @@ function Mission() {
       </table>
       {currentPage > 0 && (
         <button 
-          className="pagination-button"
+          className="pagination-button prev"
           onClick={handlePrevPage}>Previous</button>
       )}
       {currentPage < totalPages - 1 && (
         <button 
-          className="pagination-button"
+          className="pagination-button next"
           onClick={handleNextPage}>Next</button>
       )}
     </div>
