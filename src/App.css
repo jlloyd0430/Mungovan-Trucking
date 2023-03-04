@@ -177,6 +177,25 @@ h2 {
   width: 75%;
 }
 
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.service {
+  width: 30%;
+  margin-bottom: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 2px 2px 4px #ccc;
+}
+
+.service img {
+  max-width: 100%;
+  border-radius: 8px;
+}
 
 
 @keyframes slide {
@@ -205,7 +224,17 @@ h2 {
     border-radius: 10px;
     border: 2px solid #ccc;
   }
+  
+  .services-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .service {
+    width: 80%;
+  }
+}
 
 
   /* Add some margin to the images to create spacing between them */
