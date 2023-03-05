@@ -146,7 +146,6 @@ h2 {
 
 #carousel {
   display: flex;
-  width: ${(images.length + 1) * 100}%;
   transition: transform 1s ease-out;
 }
 
