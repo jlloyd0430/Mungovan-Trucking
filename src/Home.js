@@ -73,7 +73,7 @@ function Contact() {
       <div className="text-wrapper">
         <p></p>
         <p>
-          Mungovan Trucking LLC has served New England since 1947, building long lasting relationships and experience as proffesionals in the moving industry.
+          Mungovan Trucking LLC has served New England since 1947, building long lasting relationships and experience as proffesionals in Logistics.
         </p>
         <p className="price">Beta version1.0</p>
 
