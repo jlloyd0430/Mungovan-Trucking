@@ -65,7 +65,7 @@ function PasswordPrompt({ handleSubmit, handlePasswordChange }) {
       </label>
       <button type="submit">Submit</button>
       <div>
-        this page is for employess of mungovan trucking for filing daily worksheets
+        this page is for employess of mungovan trucking for sending out daily worksheets 
       </div>
     </form>
   );
