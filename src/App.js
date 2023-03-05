@@ -65,6 +65,9 @@ function PasswordPrompt({ handleSubmit, handlePasswordChange }) {
         <input type="password" onChange={handlePasswordChange} />
       </label>
       <button type="submit">Submit</button>
+      <div>
+        this page is for Mungovan employees         ONLy for submiting daily worksheets
+      </div>
     </form>
   );
 }
