@@ -35,7 +35,7 @@ function Contact() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImg((currentImg + 1) % images.length);
-    }, 4000);
+    }, 100);
 
     return () => clearInterval(intervalId);
   }, [currentImg, images.length]);
