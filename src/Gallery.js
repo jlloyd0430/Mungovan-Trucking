@@ -17,7 +17,7 @@ function Gallery() {
         </div>
         <div className="service">
           <h2>Warehousing</h2>
-          <p>Our warehousing services are top-notch.</p>
+            <p>Our warehouse is where we store tools,deliverables and customer items and where we dispatch from.</p>
         </div>
         <div className="service">
           <h2>Recycling</h2>
