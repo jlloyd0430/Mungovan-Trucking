@@ -773,35 +773,43 @@ function Mission() {
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search addresses"
       />
-      <table>
-        <thead>
-          <tr>
-            <th>Town</th>
-            <th>Street Address</th>
-            <th>State</th>
-            <th>Zip</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredAddresses.map((address, index) => (
-            <tr key={index}>
-              <td>{address.town}</td>
-              <td>{address.streetAddress}</td>
-              <td>{address.state}</td>
-              <td>{address.zip}</td>
+      <div className="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Town</th>
+              <th>Street Address</th>
+              <th>State</th>
+              <th>Zip</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredAddresses.map((address, index) => (
+              <tr key={index}>
+                <td>{address.town}</td>
+                <td>{address.streetAddress}</td>
+                <td>{address.state}</td>
+                <td>{address.zip}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       {currentPage > 0 && (
-        <button 
+        <button
           className="pagination-button prev"
-          onClick={handlePrevPage}>Previous</button>
+          onClick={handlePrevPage}
+        >
+          Previous
+        </button>
       )}
       {currentPage < totalPages - 1 && (
-        <button 
+        <button
           className="pagination-button next"
-          onClick={handleNextPage}>Next</button>
+          onClick={handleNextPage}
+        >
+          Next
+        </button>
       )}
     </div>
   );
