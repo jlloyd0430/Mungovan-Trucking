@@ -11,6 +11,12 @@ body {
   border-radius: 25px;
 }
 
+.table-wrapper {
+  max-height: 400px; // set the maximum height of the table here
+  overflow: auto;
+}
+
+
 .col-md-6 {
   font-family: 'Lobster', cursive;
 }
