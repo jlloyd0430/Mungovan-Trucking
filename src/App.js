@@ -88,6 +88,10 @@ function Footer() {
         <div className="row">
           <div className="col-sm-12">
             <hr style={{ borderTop: "1px solid yellow" }} />
+            <p className="disc">
+          Disclosure: This application is still under construction, if you wish
+          to request a feature just message me at 7748135597
+        </p>
             <p className="foot" >&copy; 2023 Mungovan Trucking LLC</p>
             <p className="foot" >Email: mungovantrucking@icloud.com</p>
           </div>
