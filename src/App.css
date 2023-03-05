@@ -205,15 +205,10 @@ h2 {
   border-radius: 8px;
 }
 
-
-
-.prev {
-  float: left;
+footer {
+color: white;
 }
 
-.next {
-  float: right;
-}
 
 @keyframes slide {
   0% {
