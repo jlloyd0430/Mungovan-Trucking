@@ -147,7 +147,6 @@ h2 {
 #carousel {
   justify-content: center;
   display: flex;
-  width: 450px;
   overflow: hidden;
   animation: slide 95s infinite linear both 0s;
   height: auto;
