@@ -146,7 +146,7 @@ h2 {
 
 #carousel {
   display: flex;
-  transition: transform 1s ease-out;
+  transition: transform 95s ease-out;
 }
 
 .home-img {
