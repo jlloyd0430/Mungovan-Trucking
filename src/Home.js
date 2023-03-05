@@ -14,6 +14,11 @@ import img8 from "./images/img8.JPG";
 import img9 from "./images/img9.JPG";
 import img10 from "./images/img10.JPG";
 import img11 from "./images/img11.JPG";
+import img12 from "./images/img12.JPG";
+import img13 from "./images/img13.JPG";
+import img14 from "./images/img14.JPG";
+import img15 from "./images/img15.JPG";
+import img16 from "./images/img16.JPG";
 
 function Contact() {
   const [currentImg, setCurrentImg] = useState(0);
@@ -30,6 +35,11 @@ function Contact() {
     { src: img9, alt: "Image 9" },
     { src: img10, alt: "Image 10" },
     { src: img11, alt: "Image 11" },
+    { src: img12, alt: "Image 12" },
+    { src: img13, alt: "Image 13" },
+    { src: img14, alt: "Image 14" },
+    { src: img15, alt: "Image 15" },
+    { src: img16, alt: "Image 16" },
   ];
 
   useEffect(() => {
