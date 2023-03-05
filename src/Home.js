@@ -75,11 +75,8 @@ function Contact() {
         <p>
           Mungovan Trucking LLC has served New England since 1947, building long lasting relationships and experience as proffesionals in Logistics.
         </p>
-        <p className="price">Beta version1.0</p>
-
-        <p className="disc">
-          Disclosure: This application is still under construction, if you wish
-          to request a feature just message me at 7748135597
+        <p className="price">
+          Beta version1.0
         </p>
       </div>
     </>
