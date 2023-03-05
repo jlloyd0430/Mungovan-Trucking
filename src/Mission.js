@@ -765,7 +765,7 @@ function Mission() {
 
   return (
     <div>
-      <h1 className="verizon-title">Verizon CO Buildings Addresses</h1>
+      <h1 className="verizon-title">Verizon CO Building Addresses</h1>
       <input
         className="searchbar"
         type="text"
