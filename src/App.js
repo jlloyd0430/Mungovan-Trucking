@@ -52,6 +52,7 @@ function App() {
         </Routes>
       </div>
       <Icons />
+      <Footer />
     </div>
   );
 }
@@ -64,9 +65,6 @@ function PasswordPrompt({ handleSubmit, handlePasswordChange }) {
         <input type="password" onChange={handlePasswordChange} />
       </label>
       <button type="submit">Submit</button>
-      <div>
-        this page is for employess of mungovan trucking ONLY for sending out daily worksheets 
-      </div>
     </form>
   );
 }
@@ -76,6 +74,23 @@ function Icons() {
     <div className="icons">
       <img src={Verizon} alt="Verizon" />
       <img src={Wpi} alt="WPI" />
+    </div>
+  );
+}
+
+function Footer() {
+  return (
+    <div className="footer">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12">
+            <hr style={{ borderTop: "1px solid yellow" }} />
+            <p>&copy; 2023 Mungovan Trucking LLC</p>
+            <p>EST. 1947</p>
+            <p>Email: mungovantrucking@icloud.com</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
