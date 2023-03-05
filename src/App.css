@@ -12,7 +12,7 @@ body {
 }
 
 .table-wrapper {
-  max-height: 400px; // set the maximum height of the table here
+  max-height: 400px;
   overflow: auto;
 }
 
