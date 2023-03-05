@@ -21,7 +21,11 @@ function Gallery() {
         </div>
         <div className="service">
           <h2>Recycling</h2>
-          <p>We offer recycling services for all types of waste.steel cardboard and trash</p>
+          <p> when we cleanout trash or anything on any job, we seperate and recycle it all from cardboard, trash and steel right at our warehouse in Southbridge Ma. a convienient location in central Massachusetts</p>
+        </div>
+           <div className="service">
+          <h2>Verizon</h2>
+          <p> Looking for a certain peice part? did the engineer under order equipment for the job? maybe order the wrong type or size part? give us a call! we have been recycling peice parts saving the goods that may be thrown away at one job and being able to help out a tech in need at another job. we have anything from super structure and cable rack all the way to small peice parts. this part of our service comes with years of experience and being able to identify any part the customer may need exclusivly tailord for verizon customers.  </p>
         </div>
       </div>
     </div>
