@@ -73,9 +73,7 @@ function Contact() {
       <div className="text-wrapper">
         <p></p>
         <p>
-          Mungovan.land is an application made by Mungovan Trucking employees
-          and affiliates exclusively with the primary purpose of providing
-          resources and tools to make the day to day job a little bit easier.
+          Mungovan Trucking LLC has served New England since 1947, building long lasting relationships and experience as proffesionals in the moving industry.
         </p>
         <p className="price">Beta version1.0</p>
 
