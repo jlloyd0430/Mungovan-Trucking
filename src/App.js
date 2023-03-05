@@ -85,9 +85,8 @@ function Footer() {
         <div className="row">
           <div className="col-sm-12">
             <hr style={{ borderTop: "1px solid yellow" }} />
-            <p>&copy; 2023 Mungovan Trucking LLC</p>
-            <p>EST. 1947</p>
-            <p>Email: mungovantrucking@icloud.com</p>
+            <p className="foot" >&copy; 2023 Mungovan Trucking LLC</p>
+            <p className="foot" >Email: mungovantrucking@icloud.com</p>
           </div>
         </div>
       </div>
