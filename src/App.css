@@ -140,16 +140,14 @@ h2 {
 }
 
 .carousel-wrapper {
-  max-width: 100%;
+  width: 100vr;
   overflow: hidden;
 }
 
 #carousel {
-  justify-content: center;
   display: flex;
-  overflow: hidden;
-  animation: slide 95s infinite linear both 0s;
-  height: auto;
+  width: ${(images.length + 1) * 100}%;
+  transition: transform 1s ease-out;
 }
 
 .home-img {
