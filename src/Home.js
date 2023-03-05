@@ -43,7 +43,7 @@ function Contact() {
   const carouselStyle = {
     width: `${(images.length + 1) * 100}%`,
     transform: `translateX(-${currentImg * (100 / (images.length + 1))}%)`,
-    transition: "transform 1s ease-out",
+    transition: "transform 95s ease-out",
   };
 
   return (
