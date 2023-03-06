@@ -1180,6 +1180,31 @@ zip: "02141",
     state: "MA",
     zip: "01543",
   },
+    {
+    town: "Sagamore",
+    streetAddress: "Route 6a",
+    state: "MA",
+    zip: "02561",
+  },
+  {
+    town: "Salem",
+    streetAddress: "35 Norman st",
+    state: "MA",
+    zip: "01970",
+  },
+  {
+    town: "Sandisfield",
+    streetAddress: "Otis rd",
+    state: "MA",
+    zip: "01255",
+  },
+  {
+    town: "Saugus",
+    streetAddress: "487 Central st",
+    state: "MA",
+    zip: "01906",
+  },
+  
   ];
 
 
