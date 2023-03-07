@@ -17,13 +17,14 @@ function Gallery() {
         </div>
         <div className="service">
           <h2>Warehousing</h2>
-            <p>Our warehouse is where we 
-dispatch from each day, we store  our tools,deliverables and customer items here, Aswell as seperate and recycle any cleanouts from jobs into cardboard, trash and steel right at our warehouse in Southbridge Ma. a convienient location in central Massachusetts.
+            <p>
+              Our dispatch operations are carried out daily from our warehouse, which also serves as a storage facility for our tools, deliverables, and customer items. Additionally, we have a designated area within our warehouse where we separate and recycle any cleanouts from our jobs into cardboard, trash, and steel. Our warehouse is located in Southbridge, MA, a convenient and central location in Massachusetts.
 </p>
         </div>
            <div className="service">
           <h2>Inventory</h2>
-          <p> Looking for a certain peice part?Maybe under or over orderd equipment for the job? maybe order the wrong type or size part? give us a call! we recycle peice parts saving goods that may be thrown away at one job and being able to help out techs in need at another jobsite. we have anything from super structure, cable, cable-rack all the way to small peice parts. this part of our service comes from years of experience and is exclusivly tailord for verizon customers.  </p>
+          <p>  Are you in need of a specific piece of equipment or perhaps an excess of ordered equipment for your job? Have you mistakenly ordered the wrong type or size of a part? If so, don't hesitate to contact us! At our company, we specialize in recycling unused pieces of equipment that might have been discarded at one job site and repurposing them to assist technicians in need at another job site. We offer a wide range of equipment, from large-scale super structures and cable-racks to small, individual pieces. Our experience in this field has enabled us to tailor our services exclusively for Verizon customers
+            </p>
         </div>
       </div>
     </div>
