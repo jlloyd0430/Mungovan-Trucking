@@ -1597,7 +1597,7 @@ zip: "02141",
 function Mission() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const addressesPerPage = 200; // Change this to the desired number of addresses per page or per scroll.
+  const addressesPerPage = 300; // Change this to the desired number of addresses per page or per scroll.
 
   const filteredAddresses = addresses.filter((address) => {
     const searchRegex = new RegExp(searchQuery, "i"); // case-insensitive search
