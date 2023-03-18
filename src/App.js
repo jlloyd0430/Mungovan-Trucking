@@ -66,7 +66,7 @@ function PasswordPrompt({ handleSubmit, handlePasswordChange }) {
       </label>
       <button type="submit">Submit</button>
       <div>
-        this page is for Mungovan employees         ONLY for submiting daily worksheets
+        this form is password protected, for Mungovan employees submiting daily worksheets.
       </div>
     </form>
   );
