@@ -1080,7 +1080,7 @@ zip: "02141",
   },
   {
     town: "Petersham",
-    streetAddress: "East st",
+    streetAddress: "12 East st",
     state: "MA",
     zip: "01366",
   },
