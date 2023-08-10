@@ -6,7 +6,7 @@ import "./AddressBook.css";
     
   {
     town: "Acton",
-    streetAddress: "42 Massachusetts ave",
+    streetAddress: "263 main st",
     state: "MA",
     zip: "01720",
   },
